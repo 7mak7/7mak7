@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "mak_mod:item/reversalredparticle"
+  }
+}

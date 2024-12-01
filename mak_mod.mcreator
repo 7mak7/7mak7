@@ -1,0 +1,97 @@
+{
+  "mod_elements": [
+    {
+      "name": "Red",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/entity/RedEntity.java",
+          "src/main/java/net/mcreator/makmod/client/renderer/RedRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "ReversalRed",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reversal_red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/reversal_red.json",
+          "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
+        ]
+      }
+    },
+    {
+      "name": "Gojo",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gojo",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "ReversalRedUsed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reversal_red_used",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/procedures/ReversalRedUsedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {
+    "ITEMS:minecraft:pickaxes": [
+      "~CUSTOM:ReversalRed"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "entity.mak_mod.red": "Red",
+      "item_group.mak_mod.gojo": "Gojo",
+      "item.mak_mod.reversal_red": "Reversal Red"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "mak_mod",
+    "modName": "7mak7 Mod",
+    "version": "1.0.0",
+    "author": "1, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "net.mcreator.makmod"
+  },
+  "mcreatorVersion": 202400232117
+}
