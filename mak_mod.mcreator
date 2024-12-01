@@ -26,7 +26,7 @@
     {
       "name": "Red",
       "type": "projectile",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "red",
       "metadata": {
@@ -52,7 +52,7 @@
     {
       "name": "RightClickAnywhere",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "right_click_anywhere",
       "metadata": {
