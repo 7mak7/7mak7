@@ -1,35 +1,57 @@
 {
   "_fv": 69,
-  "_type": "tool",
+  "_type": "item",
   "definition": {
-    "toolType": "Special",
     "renderType": 0,
-    "blockingRenderType": 0,
     "texture": "reversalredparticle",
-    "customModelName": "Normal",
-    "blockingModelName": "Normal blocking",
+    "customModelName": "Ranged item",
+    "customProperties": {},
+    "states": [],
     "name": "Reversal Red",
-    "specialInformation": {
-      "fixedValue": []
-    },
+    "rarity": "COMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:Gojo"
       }
     ],
-    "efficiency": 4.0,
-    "attackSpeed": 1.0,
-    "enchantability": 2,
+    "stackSize": 64,
+    "enchantability": 0,
+    "useDuration": 72000,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "usageCount": 100,
+    "specialInformation": {
+      "fixedValue": []
+    },
     "glowCondition": {
       "fixedValue": false
     },
-    "repairItems": [],
-    "immuneToFire": false,
-    "blockDropsTier": "WOOD",
-    "blocksAffected": [],
-    "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "enableRanged": true,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "CUSTOM:Red"
+    },
+    "projectileDisableAmmoCheck": true,
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "bow"
   }
 }
