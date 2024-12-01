@@ -17,7 +17,7 @@ import net.mcreator.makmod.MakModMod;
 public class MakModModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MakModMod.MODID);
 	public static final RegistryObject<CreativeModeTab> GOJO = REGISTRY.register("gojo",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.mak_mod.gojo")).icon(() -> new ItemStack(MakModModItems.GOJO_EYE.get())).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.mak_mod.gojo")).icon(() -> new ItemStack(MakModModItems.REVERSAL_RED.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(MakModModItems.REVERSAL_RED.get());
 			})
 
