@@ -1,11 +1,22 @@
 package net.mcreator.makmod.client.renderer;
 
+import net.minecraft.util.Mth;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.MultiBufferSource;
+
+import net.mcreator.makmod.entity.RedEntity;
+import net.mcreator.makmod.client.model.ModelRed;
+
 import com.mojang.math.Axis;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
 
 public class RedRenderer extends EntityRenderer<RedEntity> {
-
 	private static final ResourceLocation texture = new ResourceLocation("mak_mod:textures/entities/redtexture.png");
-
 	private final ModelRed model;
 
 	public RedRenderer(EntityRendererProvider.Context context) {
@@ -21,7 +32,6 @@ public class RedRenderer extends EntityRenderer<RedEntity> {
 		poseStack.mulPose(Axis.ZP.rotationDegrees(90 + Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())));
 		model.renderToBuffer(poseStack, vb, packedLightIn, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		poseStack.popPose();
-
 		super.render(entityIn, entityYaw, partialTicks, poseStack, bufferIn, packedLightIn);
 	}
 
@@ -29,5 +39,4 @@ public class RedRenderer extends EntityRenderer<RedEntity> {
 	public ResourceLocation getTextureLocation(RedEntity entity) {
 		return texture;
 	}
-
 }

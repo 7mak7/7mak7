@@ -1,6 +1,21 @@
 package net.mcreator.makmod.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+
+import net.mcreator.makmod.init.MakModModEntities;
+import net.mcreator.makmod.entity.RedEntity;
+
+import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class RightClickAnywhereProcedure {

@@ -26,7 +26,7 @@
     {
       "name": "Red",
       "type": "projectile",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "red",
       "metadata": {
@@ -52,7 +52,7 @@
     {
       "name": "RightClickAnywhere",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "right_click_anywhere",
       "metadata": {
@@ -70,11 +70,7 @@
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {
-    "ITEMS:minecraft:pickaxes": [
-      "~CUSTOM:ReversalRed"
-    ]
-  },
+  "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
     "en_us": {
