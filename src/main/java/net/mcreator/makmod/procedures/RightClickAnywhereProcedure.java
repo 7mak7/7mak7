@@ -12,7 +12,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.makmod.init.MakModModItems;
 import net.mcreator.makmod.init.MakModModEntities;
 import net.mcreator.makmod.entity.RedEntity;
 
