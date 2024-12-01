@@ -10,7 +10,6 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.item.Item;
 
-import net.mcreator.makmod.item.ReversalRedItem;
 import net.mcreator.makmod.item.LapseBlueItem;
 import net.mcreator.makmod.item.GojoEyeItem;
 import net.mcreator.makmod.MakModMod;

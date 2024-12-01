@@ -1,6 +1,19 @@
 {
   "mod_elements": [
     {
+      "name": "ReversalRed",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reversal_red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/reversal_red.json",
+          "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
+        ]
+      }
+    },
+    {
       "name": "Gojo",
       "type": "tab",
       "compiles": true,
@@ -37,15 +50,20 @@
       }
     },
     {
-      "name": "ReversalRed",
-      "type": "item",
+      "name": "RightClickAnywhere",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "reversal_red",
+      "registry_name": "right_click_anywhere",
       "metadata": {
         "files": [
-          "src/main/resources/assets/mak_mod/models/item/reversal_red.json",
-          "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
+          "src/main/java/net/mcreator/makmod/procedures/RightClickAnywhereProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
         ]
       }
     },
