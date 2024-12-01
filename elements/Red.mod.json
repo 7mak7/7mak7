@@ -7,7 +7,7 @@
     },
     "showParticles": false,
     "actionSound": {
-      "value": "block.amethyst_block.break"
+      "value": "entity.lightning.impact"
     },
     "igniteFire": false,
     "power": 25.0,
