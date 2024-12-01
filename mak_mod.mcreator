@@ -59,7 +59,12 @@
         "files": [
           "src/main/java/net/mcreator/makmod/procedures/RightClickAnywhereProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       }
     }
   ],
