@@ -26,7 +26,7 @@
     {
       "name": "Red",
       "type": "projectile",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "red",
       "metadata": {
@@ -50,27 +50,9 @@
       }
     },
     {
-      "name": "RightClickAnywhere",
-      "type": "procedure",
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "right_click_anywhere",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/makmod/procedures/RightClickAnywhereProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Blue",
       "type": "projectile",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "blue",
       "metadata": {
