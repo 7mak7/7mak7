@@ -3,7 +3,7 @@
   "_type": "projectile",
   "definition": {
     "projectileItem": {
-      "value": "CUSTOM:ReversalRed"
+      "value": "CUSTOM:LapseBlue"
     },
     "showParticles": false,
     "actionSound": {
@@ -14,7 +14,7 @@
     "damage": 25.0,
     "knockback": 25,
     "entityModel": "ModelRed",
-    "customModelTexture": "redtexture.png",
+    "customModelTexture": "redtexture2.png",
     "modelWidth": 0.5,
     "modelHeight": 0.5
   }

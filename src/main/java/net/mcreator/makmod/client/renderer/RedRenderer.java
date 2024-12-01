@@ -16,7 +16,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 public class RedRenderer extends EntityRenderer<RedEntity> {
-	private static final ResourceLocation texture = new ResourceLocation("mak_mod:textures/entities/redtexture.png");
+	private static final ResourceLocation texture = new ResourceLocation("mak_mod:textures/entities/redtexture2.png");
 	private final ModelRed model;
 
 	public RedRenderer(EntityRendererProvider.Context context) {

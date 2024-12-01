@@ -3,11 +3,11 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "reversalredparticle",
+    "texture": "lapseblueparticle-photoroom",
     "customModelName": "Ranged item",
     "customProperties": {},
     "states": [],
-    "name": "Reversal Red",
+    "name": "Reversal Blue",
     "rarity": "COMMON",
     "creativeTabs": [
       {

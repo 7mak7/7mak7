@@ -19,11 +19,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.makmod.init.MakModModItems;
 import net.mcreator.makmod.init.MakModModEntities;
 
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
 public class RedEntity extends AbstractArrow implements ItemSupplier {
-	public static final ItemStack PROJECTILE_ITEM = new ItemStack(MakModModItems.REVERSAL_RED.get());
+	public static final ItemStack PROJECTILE_ITEM = new ItemStack(MakModModItems.LAPSE_BLUE.get());
 
 	public RedEntity(PlayMessages.SpawnEntity packet, Level world) {
 		super(MakModModEntities.RED.get(), world);
