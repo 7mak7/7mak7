@@ -17,11 +17,24 @@ public class ModelRed<T extends Entity> extends EntityModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 0)
-				.addBox(-3.0F, -9.0F, -3.0F, 6.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)),
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main",
+				CubeListBuilder.create().texOffs(48, 42)
+						.addBox(-5.0F, -2.0F, -5.0F, 10.0F, 1.0F, 10.0F, new CubeDeformation(0.0F)).texOffs(0, 0)
+						.addBox(-6.0F, -13.0F, -6.0F, 12.0F, 11.0F, 12.0F, new CubeDeformation(0.0F)).texOffs(48, 53)
+						.addBox(-5.0F, -14.0F, -5.0F, 10.0F, 1.0F, 10.0F, new CubeDeformation(0.0F)).texOffs(48, 64)
+						.addBox(-3.0F, -15.0F, -3.0F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(0, 69)
+						.addBox(-3.0F, -1.0F, -3.0F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(0, 23)
+						.addBox(-5.0F, -12.0F, -7.0F, 10.0F, 9.0F, 14.0F, new CubeDeformation(0.0F)).texOffs(48, 0)
+						.addBox(-3.0F, -10.0F, -8.0F, 6.0F, 5.0F, 16.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		return LayerDefinition.create(meshdefinition, 32, 32);
+		PartDefinition cube_r1 = bb_main.addOrReplaceChild("cube_r1",
+				CubeListBuilder.create().texOffs(0, 46)
+						.addBox(-5.0F, -12.0F, -7.0F, 10.0F, 9.0F, 14.0F, new CubeDeformation(0.0F)).texOffs(48, 21)
+						.addBox(-3.0F, -10.0F, -8.0F, 6.0F, 5.0F, 16.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
+
+		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
 	@Override
@@ -32,6 +45,6 @@ public class ModelRed<T extends Entity> extends EntityModel<T> {
 
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
 			float headPitch) {
-		this.bb_main.yRot = ageInTicks;
+		this.bb_main.zRot = headPitch / (180F / (float) Math.PI);
 	}
 }
