@@ -5,7 +5,7 @@
     "projectileItem": {
       "value": "CUSTOM:LapseBlue"
     },
-    "showParticles": false,
+    "showParticles": true,
     "actionSound": {
       "value": "entity.lightning.impact"
     },
