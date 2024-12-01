@@ -23,22 +23,22 @@ import net.mcreator.makmod.init.MakModModItems;
 import net.mcreator.makmod.init.MakModModEntities;
 
 @OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
-public class RedEntity extends AbstractArrow implements ItemSupplier {
-	public static final ItemStack PROJECTILE_ITEM = new ItemStack(MakModModItems.REVERSAL_RED.get());
+public class BlueEntity extends AbstractArrow implements ItemSupplier {
+	public static final ItemStack PROJECTILE_ITEM = new ItemStack(MakModModItems.LAPSE_BLUE.get());
 
-	public RedEntity(PlayMessages.SpawnEntity packet, Level world) {
-		super(MakModModEntities.RED.get(), world);
+	public BlueEntity(PlayMessages.SpawnEntity packet, Level world) {
+		super(MakModModEntities.BLUE.get(), world);
 	}
 
-	public RedEntity(EntityType<? extends RedEntity> type, Level world) {
+	public BlueEntity(EntityType<? extends BlueEntity> type, Level world) {
 		super(type, world);
 	}
 
-	public RedEntity(EntityType<? extends RedEntity> type, double x, double y, double z, Level world) {
+	public BlueEntity(EntityType<? extends BlueEntity> type, double x, double y, double z, Level world) {
 		super(type, x, y, z, world);
 	}
 
-	public RedEntity(EntityType<? extends RedEntity> type, LivingEntity entity, Level world) {
+	public BlueEntity(EntityType<? extends BlueEntity> type, LivingEntity entity, Level world) {
 		super(type, entity, world);
 	}
 
@@ -71,39 +71,38 @@ public class RedEntity extends AbstractArrow implements ItemSupplier {
 			this.discard();
 	}
 
-	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource source) {
-		return shoot(world, entity, source, 1.5f, 25, 25);
+	public static BlueEntity shoot(Level world, LivingEntity entity, RandomSource source) {
+		return shoot(world, entity, source, 1f, 25, 25);
 	}
 
-	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource source, float pullingPower) {
-		return shoot(world, entity, source, pullingPower * 1.5f, 25, 25);
+	public static BlueEntity shoot(Level world, LivingEntity entity, RandomSource source, float pullingPower) {
+		return shoot(world, entity, source, pullingPower * 1f, 25, 25);
 	}
 
-	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
-		RedEntity entityarrow = new RedEntity(MakModModEntities.RED.get(), entity, world);
+	public static BlueEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
+		BlueEntity entityarrow = new BlueEntity(MakModModEntities.BLUE.get(), entity, world);
 		entityarrow.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
 		entityarrow.setSilent(true);
 		entityarrow.setCritArrow(false);
 		entityarrow.setBaseDamage(damage);
 		entityarrow.setKnockback(knockback);
 		world.addFreshEntity(entityarrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.impact")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.death")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
-	public static RedEntity shoot(LivingEntity entity, LivingEntity target) {
-		RedEntity entityarrow = new RedEntity(MakModModEntities.RED.get(), entity, entity.level());
+	public static BlueEntity shoot(LivingEntity entity, LivingEntity target) {
+		BlueEntity entityarrow = new BlueEntity(MakModModEntities.BLUE.get(), entity, entity.level());
 		double dx = target.getX() - entity.getX();
 		double dy = target.getY() + target.getEyeHeight() - 1.1;
 		double dz = target.getZ() - entity.getZ();
-		entityarrow.shoot(dx, dy - entityarrow.getY() + Math.hypot(dx, dz) * 0.2F, dz, 1.5f * 2, 12.0F);
+		entityarrow.shoot(dx, dy - entityarrow.getY() + Math.hypot(dx, dz) * 0.2F, dz, 1f * 2, 12.0F);
 		entityarrow.setSilent(true);
 		entityarrow.setBaseDamage(25);
 		entityarrow.setKnockback(25);
 		entityarrow.setCritArrow(false);
 		entity.level().addFreshEntity(entityarrow);
-		entity.level().playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.impact")), SoundSource.PLAYERS, 1,
-				1f / (RandomSource.create().nextFloat() * 0.5f + 1));
+		entity.level().playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.death")), SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

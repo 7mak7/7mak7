@@ -3,18 +3,18 @@
   "_type": "projectile",
   "definition": {
     "projectileItem": {
-      "value": "CUSTOM:ReversalRed"
+      "value": "CUSTOM:LapseBlue"
     },
     "showParticles": false,
     "actionSound": {
-      "value": "entity.lightning.impact"
+      "value": "entity.warden.death"
     },
     "igniteFire": false,
-    "power": 1.5,
+    "power": 1.0,
     "damage": 25.0,
     "knockback": 25,
     "entityModel": "ModelRed",
-    "customModelTexture": "redtexture.png",
+    "customModelTexture": "bluetexture.png",
     "modelWidth": 0.5,
     "modelHeight": 0.5
   }

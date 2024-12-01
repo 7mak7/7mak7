@@ -48,6 +48,32 @@
           "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
         ]
       }
+    },
+    {
+      "name": "Blue",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blue",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/client/renderer/BlueRenderer.java",
+          "src/main/java/net/mcreator/makmod/entity/BlueEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "LapseBlue",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lapse_blue",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/lapse_blue.json",
+          "src/main/java/net/mcreator/makmod/item/LapseBlueItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -58,6 +84,7 @@
     "en_us": {
       "item.mak_mod.gojo_eye": "Gojo Eye",
       "item_group.mak_mod.gojo": "Gojo",
+      "item.mak_mod.lapse_blue": "Lapse Blue",
       "item.mak_mod.reversal_red": "Reversal Red"
     }
   },
