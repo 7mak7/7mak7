@@ -20,10 +20,10 @@ import net.mcreator.makmod.MakModMod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MakModModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MakModMod.MODID);
-	public static final RegistryObject<EntityType<BlueEntity>> BLUE = register("blue",
-			EntityType.Builder.<BlueEntity>of(BlueEntity::new, MobCategory.MISC).setCustomClientFactory(BlueEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<RedEntity>> RED = register("red",
 			EntityType.Builder.<RedEntity>of(RedEntity::new, MobCategory.MISC).setCustomClientFactory(RedEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<BlueEntity>> BLUE = register("blue",
+			EntityType.Builder.<BlueEntity>of(BlueEntity::new, MobCategory.MISC).setCustomClientFactory(BlueEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities

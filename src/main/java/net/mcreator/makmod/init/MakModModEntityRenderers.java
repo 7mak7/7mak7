@@ -16,7 +16,7 @@ import net.mcreator.makmod.client.renderer.BlueRenderer;
 public class MakModModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(MakModModEntities.BLUE.get(), BlueRenderer::new);
 		event.registerEntityRenderer(MakModModEntities.RED.get(), RedRenderer::new);
+		event.registerEntityRenderer(MakModModEntities.BLUE.get(), BlueRenderer::new);
 	}
 }
