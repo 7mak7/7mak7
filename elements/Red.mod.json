@@ -10,7 +10,7 @@
       "value": "entity.lightning.impact"
     },
     "igniteFire": false,
-    "power": 25.0,
+    "power": 5.0,
     "damage": 25.0,
     "knockback": 25,
     "entityModel": "ModelRed",

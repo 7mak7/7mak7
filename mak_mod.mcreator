@@ -48,6 +48,19 @@
           "src/main/resources/assets/mak_mod/models/item/gojo_eye.json"
         ]
       }
+    },
+    {
+      "name": "RightClickAnywhere",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click_anywhere",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/procedures/RightClickAnywhereProcedure.java"
+        ],
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [],
