@@ -8,7 +8,7 @@
     "customProperties": {},
     "states": [],
     "name": "Gojo Eye",
-    "rarity": "COMMON",
+    "rarity": "EPIC",
     "creativeTabs": [],
     "stackSize": 64,
     "enchantability": 0,
@@ -25,7 +25,10 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "This item isnt obtainable, its an icon for Gojo Tab",
+        "Its consumable somehow..."
+      ]
     },
     "glowCondition": {
       "fixedValue": false
@@ -40,14 +43,14 @@
       "value": "CUSTOM:Red"
     },
     "projectileDisableAmmoCheck": false,
-    "isFood": false,
+    "isFood": true,
     "nutritionalValue": 4,
     "saturation": 0.3,
     "eatResultItem": {
       "value": ""
     },
     "isMeat": false,
-    "isAlwaysEdible": false,
+    "isAlwaysEdible": true,
     "animation": "none"
   }
 }
