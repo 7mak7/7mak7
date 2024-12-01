@@ -35,6 +35,19 @@
           "src/main/java/net/mcreator/makmod/client/renderer/RedRenderer.java"
         ]
       }
+    },
+    {
+      "name": "GojoEye",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gojo_eye",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/item/GojoEyeItem.java",
+          "src/main/resources/assets/mak_mod/models/item/gojo_eye.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -47,6 +60,7 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
+      "item.mak_mod.gojo_eye": "Gojo Eye",
       "item_group.mak_mod.gojo": "Gojo",
       "item.mak_mod.reversal_red": "Reversal Red"
     }
