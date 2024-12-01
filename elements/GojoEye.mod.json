@@ -51,6 +51,6 @@
     },
     "isMeat": false,
     "isAlwaysEdible": true,
-    "animation": "none"
+    "animation": "eat"
   }
 }
