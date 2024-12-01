@@ -4,39 +4,42 @@ package net.mcreator.makmod.entity;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
-import net.minecraft.world.entity.ai.control.FlyingMoveControl;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.ItemSupplier;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.core.BlockPos;
 
+import net.mcreator.makmod.init.MakModModItems;
 import net.mcreator.makmod.init.MakModModEntities;
 
-public class RedEntity extends Monster {
+@OnlyIn(value = Dist.CLIENT, _interface = ItemSupplier.class)
+public class RedEntity extends AbstractArrow implements ItemSupplier {
+	public static final ItemStack PROJECTILE_ITEM = new ItemStack(MakModModItems.REVERSAL_RED.get());
+
 	public RedEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(MakModModEntities.RED.get(), world);
+		super(MakModModEntities.RED.get(), world);
 	}
 
-	public RedEntity(EntityType<RedEntity> type, Level world) {
+	public RedEntity(EntityType<? extends RedEntity> type, Level world) {
 		super(type, world);
-		setMaxUpStep(0f);
-		xpReward = 0;
-		setNoAi(true);
-		setPersistenceRequired();
-		this.moveControl = new FlyingMoveControl(this, 10, true);
+	}
+
+	public RedEntity(EntityType<? extends RedEntity> type, double x, double y, double z, Level world) {
+		super(type, x, y, z, world);
+	}
+
+	public RedEntity(EntityType<? extends RedEntity> type, LivingEntity entity, Level world) {
+		super(type, entity, world);
 	}
 
 	@Override
@@ -45,60 +48,62 @@ public class RedEntity extends Monster {
 	}
 
 	@Override
-	protected PathNavigation createNavigation(Level world) {
-		return new FlyingPathNavigation(this, world);
+	@OnlyIn(Dist.CLIENT)
+	public ItemStack getItem() {
+		return PROJECTILE_ITEM;
 	}
 
 	@Override
-	public MobType getMobType() {
-		return MobType.UNDEFINED;
+	protected ItemStack getPickupItem() {
+		return PROJECTILE_ITEM;
 	}
 
 	@Override
-	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-		return false;
+	protected void doPostHurtEffects(LivingEntity entity) {
+		super.doPostHurtEffects(entity);
+		entity.setArrowCount(entity.getArrowCount() - 1);
 	}
 
 	@Override
-	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+	public void tick() {
+		super.tick();
+		if (this.inGround)
+			this.discard();
 	}
 
-	@Override
-	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource source) {
+		return shoot(world, entity, source, 25f, 25, 25);
 	}
 
-	@Override
-	public boolean causeFallDamage(float l, float d, DamageSource source) {
-		return false;
+	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource source, float pullingPower) {
+		return shoot(world, entity, source, pullingPower * 25f, 25, 25);
 	}
 
-	@Override
-	protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
+	public static RedEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
+		RedEntity entityarrow = new RedEntity(MakModModEntities.RED.get(), entity, world);
+		entityarrow.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
+		entityarrow.setSilent(true);
+		entityarrow.setCritArrow(false);
+		entityarrow.setBaseDamage(damage);
+		entityarrow.setKnockback(knockback);
+		world.addFreshEntity(entityarrow);
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		return entityarrow;
 	}
 
-	@Override
-	public void setNoGravity(boolean ignored) {
-		super.setNoGravity(true);
-	}
-
-	public void aiStep() {
-		super.aiStep();
-		this.setNoGravity(true);
-	}
-
-	public static void init() {
-	}
-
-	public static AttributeSupplier.Builder createAttributes() {
-		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 25);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
-		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(Attributes.FLYING_SPEED, 25);
-		return builder;
+	public static RedEntity shoot(LivingEntity entity, LivingEntity target) {
+		RedEntity entityarrow = new RedEntity(MakModModEntities.RED.get(), entity, entity.level());
+		double dx = target.getX() - entity.getX();
+		double dy = target.getY() + target.getEyeHeight() - 1.1;
+		double dz = target.getZ() - entity.getZ();
+		entityarrow.shoot(dx, dy - entityarrow.getY() + Math.hypot(dx, dz) * 0.2F, dz, 25f * 2, 12.0F);
+		entityarrow.setSilent(true);
+		entityarrow.setBaseDamage(25);
+		entityarrow.setKnockback(25);
+		entityarrow.setCritArrow(false);
+		entity.level().addFreshEntity(entityarrow);
+		entity.level().playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.amethyst_block.break")), SoundSource.PLAYERS, 1,
+				1f / (RandomSource.create().nextFloat() * 0.5f + 1));
+		return entityarrow;
 	}
 }

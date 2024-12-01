@@ -1,19 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "Red",
-      "type": "livingentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "red",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/makmod/entity/RedEntity.java",
-          "src/main/java/net/mcreator/makmod/client/renderer/RedRenderer.java"
-        ]
-      }
-    },
-    {
       "name": "ReversalRed",
       "type": "tool",
       "compiles": true,
@@ -37,24 +24,15 @@
       }
     },
     {
-      "name": "ReversalRedUsed",
-      "type": "procedure",
+      "name": "Red",
+      "type": "projectile",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "reversal_red_used",
+      "registry_name": "red",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/makmod/procedures/ReversalRedUsedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
+          "src/main/java/net/mcreator/makmod/entity/RedEntity.java",
+          "src/main/java/net/mcreator/makmod/client/renderer/RedRenderer.java"
         ]
       }
     }
@@ -69,7 +47,6 @@
   "tab_element_order": {},
   "language_map": {
     "en_us": {
-      "entity.mak_mod.red": "Red",
       "item_group.mak_mod.gojo": "Gojo",
       "item.mak_mod.reversal_red": "Reversal Red"
     }
@@ -93,5 +70,5 @@
     "currentGenerator": "forge-1.20.1",
     "modElementsPackage": "net.mcreator.makmod"
   },
-  "mcreatorVersion": 202400232117
+  "mcreatorVersion": 202400342716
 }
