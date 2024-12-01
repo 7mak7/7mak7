@@ -1,19 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "ReversalRed",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "reversal_red",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/mak_mod/models/item/reversal_red.json",
-          "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
-        ]
-      }
-    },
-    {
       "name": "Gojo",
       "type": "tab",
       "compiles": true,
@@ -48,15 +35,24 @@
           "src/main/resources/assets/mak_mod/models/item/gojo_eye.json"
         ]
       }
+    },
+    {
+      "name": "ReversalRed",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reversal_red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/reversal_red.json",
+          "src/main/java/net/mcreator/makmod/item/ReversalRedItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {
-    "ITEMS:minecraft:pickaxes": [
-      "~CUSTOM:ReversalRed"
-    ]
-  },
+  "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
     "en_us": {

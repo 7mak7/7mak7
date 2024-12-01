@@ -16,8 +16,8 @@ import net.mcreator.makmod.MakModMod;
 
 public class MakModModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MakModMod.MODID);
-	public static final RegistryObject<Item> REVERSAL_RED = REGISTRY.register("reversal_red", () -> new ReversalRedItem());
 	public static final RegistryObject<Item> GOJO_EYE = REGISTRY.register("gojo_eye", () -> new GojoEyeItem());
+	public static final RegistryObject<Item> REVERSAL_RED = REGISTRY.register("reversal_red", () -> new ReversalRedItem());
 	// Start of user code block custom items
 	// End of user code block custom items
 }
