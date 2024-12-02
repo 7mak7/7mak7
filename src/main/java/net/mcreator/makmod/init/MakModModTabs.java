@@ -32,7 +32,7 @@ public class MakModModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 
-			tabData.accept(MakModModItems.CRUCIFIX_SIGIL_SPAWN_EGG.get());
+			tabData.accept(MakModModItems.SIGIL_SPAWN_EGG.get());
 
 		}
 	}

@@ -16,14 +16,14 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.makmod.entity.CrucifixSigilEntity;
+import net.mcreator.makmod.entity.SigilEntity;
 import net.mcreator.makmod.MakModMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MakModModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MakModMod.MODID);
-	public static final RegistryObject<EntityType<CrucifixSigilEntity>> CRUCIFIX_SIGIL = register("crucifix_sigil", EntityType.Builder.<CrucifixSigilEntity>of(CrucifixSigilEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CrucifixSigilEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<SigilEntity>> SIGIL = register("sigil",
+			EntityType.Builder.<SigilEntity>of(SigilEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SigilEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -34,12 +34,12 @@ public class MakModModEntities {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			CrucifixSigilEntity.init();
+			SigilEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(CRUCIFIX_SIGIL.get(), CrucifixSigilEntity.createAttributes().build());
+		event.put(SIGIL.get(), SigilEntity.createAttributes().build());
 	}
 }

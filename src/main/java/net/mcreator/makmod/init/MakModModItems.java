@@ -16,8 +16,8 @@ import net.mcreator.makmod.MakModMod;
 
 public class MakModModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MakModMod.MODID);
-	public static final RegistryObject<Item> CRUCIFIX_SIGIL_SPAWN_EGG = REGISTRY.register("crucifix_sigil_spawn_egg", () -> new ForgeSpawnEggItem(MakModModEntities.CRUCIFIX_SIGIL, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> CRUCIFIX = REGISTRY.register("crucifix", () -> new CrucifixItem());
+	public static final RegistryObject<Item> SIGIL_SPAWN_EGG = REGISTRY.register("sigil_spawn_egg", () -> new ForgeSpawnEggItem(MakModModEntities.SIGIL, -1, -1, new Item.Properties()));
 	// Start of user code block custom items
 	// End of user code block custom items
 }

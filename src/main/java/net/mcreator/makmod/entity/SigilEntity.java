@@ -19,6 +19,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -30,12 +31,12 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.makmod.init.MakModModEntities;
 
-public class CrucifixSigilEntity extends Monster {
-	public CrucifixSigilEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(MakModModEntities.CRUCIFIX_SIGIL.get(), world);
+public class SigilEntity extends Monster {
+	public SigilEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(MakModModEntities.SIGIL.get(), world);
 	}
 
-	public CrucifixSigilEntity(EntityType<CrucifixSigilEntity> type, Level world) {
+	public SigilEntity(EntityType<SigilEntity> type, Level world) {
 		super(type, world);
 		setMaxUpStep(0f);
 		xpReward = 0;
@@ -118,6 +119,19 @@ public class CrucifixSigilEntity extends Monster {
 	@Override
 	public boolean fireImmune() {
 		return true;
+	}
+
+	@Override
+	public boolean isPushable() {
+		return false;
+	}
+
+	@Override
+	protected void doPush(Entity entityIn) {
+	}
+
+	@Override
+	protected void pushEntities() {
 	}
 
 	@Override

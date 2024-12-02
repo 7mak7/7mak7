@@ -1,7 +1,7 @@
 {
   "item_group.mak_mod.doors": "Doors",
-  "entity.mak_mod.crucifix_sigil": "Crucifix Sigil",
+  "item.mak_mod.sigil_spawn_egg": "Sigil Spawn Egg",
   "item.mak_mod.crucifix": "Crucifix",
-  "item.mak_mod.crucifix_sigil_spawn_egg": "Crucifix Sigil Spawn Egg",
-  "subtitles.crucifix": "Mob got Crucified"
+  "subtitles.crucifix": "Mob got Crucified",
+  "entity.mak_mod.sigil": "Sigil"
 }

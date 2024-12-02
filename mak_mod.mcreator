@@ -1,20 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "CrucifixSigil",
-      "type": "livingentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "crucifix_sigil",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/mak_mod/models/item/crucifix_sigil_spawn_egg.json",
-          "src/main/java/net/mcreator/makmod/entity/CrucifixSigilEntity.java",
-          "src/main/java/net/mcreator/makmod/client/renderer/CrucifixSigilRenderer.java"
-        ]
-      }
-    },
-    {
       "name": "Crucifix",
       "type": "item",
       "compiles": true,
@@ -57,9 +43,35 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
+        ]
+      }
+    },
+    {
+      "name": "Sigil",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sigil",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/sigil_spawn_egg.json",
+          "src/main/java/net/mcreator/makmod/entity/SigilEntity.java",
+          "src/main/java/net/mcreator/makmod/client/renderer/SigilRenderer.java"
         ]
       }
     }
@@ -80,10 +92,10 @@
   "language_map": {
     "en_us": {
       "item_group.mak_mod.doors": "Doors",
-      "entity.mak_mod.crucifix_sigil": "Crucifix Sigil",
+      "item.mak_mod.sigil_spawn_egg": "Sigil Spawn Egg",
       "item.mak_mod.crucifix": "Crucifix",
-      "item.mak_mod.crucifix_sigil_spawn_egg": "Crucifix Sigil Spawn Egg",
-      "subtitles.crucifix": "Mob got Crucified"
+      "subtitles.crucifix": "Mob got Crucified",
+      "entity.mak_mod.sigil": "Sigil"
     }
   },
   "foldersRoot": {

@@ -54,6 +54,6 @@ public class ModelCrucifixSigil<T extends Entity> extends EntityModel<T> {
 
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
 			float headPitch) {
-		this.bb_main.xRot = ageInTicks;
+		this.bb_main.yRot = ageInTicks;
 	}
 }
