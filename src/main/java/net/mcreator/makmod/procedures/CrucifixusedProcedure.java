@@ -52,9 +52,11 @@ public class CrucifixusedProcedure {
 		MakModMod.queueServerWork(77, () -> {
 			if (!entity.level().isClientSide())
 				entity.discard();
-			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"kill @e[type=mak_mod:sigil]");
+			MakModMod.queueServerWork(45, () -> {
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"kill @e[type=mak_mod:sigil]");
+			});
 		});
 	}
 }
