@@ -1,0 +1,11 @@
+{
+  "crucifix": {
+    "subtitle": "subtitles.crucifix",
+    "sounds": [
+      {
+        "name": "mak_mod:crucifix-sound-made-with-voicemod",
+        "stream": false
+      }
+    ]
+  }
+}

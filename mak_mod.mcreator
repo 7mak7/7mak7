@@ -1,11 +1,90 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "CrucifixSigil",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crucifix_sigil",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mak_mod/models/item/crucifix_sigil_spawn_egg.json",
+          "src/main/java/net/mcreator/makmod/entity/CrucifixSigilEntity.java",
+          "src/main/java/net/mcreator/makmod/client/renderer/CrucifixSigilRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "Crucifix",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crucifix",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/item/CrucifixItem.java",
+          "src/main/resources/assets/mak_mod/models/item/crucifix.json"
+        ]
+      }
+    },
+    {
+      "name": "Doors",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doors",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Crucifixused",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crucifixused",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/makmod/procedures/CrucifixusedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "crucifix",
+      "files": [
+        "crucifix-sound-made-with-voicemod"
+      ],
+      "category": "master",
+      "subtitle": "Mob got Crucified"
+    }
+  ],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item_group.mak_mod.doors": "Doors",
+      "entity.mak_mod.crucifix_sigil": "Crucifix Sigil",
+      "item.mak_mod.crucifix": "Crucifix",
+      "item.mak_mod.crucifix_sigil_spawn_egg": "Crucifix Sigil Spawn Egg",
+      "subtitles.crucifix": "Mob got Crucified"
+    }
   },
   "foldersRoot": {
     "name": "~",

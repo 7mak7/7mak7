@@ -1,0 +1,7 @@
+{
+  "parent": "mak_mod:custom/crucifix",
+  "textures": {
+    "0": "mak_mod:block/crucifixtexture",
+    "particle": "mak_mod:item/crucifixss"
+  }
+}

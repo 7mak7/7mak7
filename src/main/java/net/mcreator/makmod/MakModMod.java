@@ -17,6 +17,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.makmod.init.MakModModTabs;
+import net.mcreator.makmod.init.MakModModSounds;
+import net.mcreator.makmod.init.MakModModItems;
+import net.mcreator.makmod.init.MakModModEntities;
+
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -36,6 +41,12 @@ public class MakModMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		MakModModSounds.REGISTRY.register(bus);
+
+		MakModModItems.REGISTRY.register(bus);
+		MakModModEntities.REGISTRY.register(bus);
+
+		MakModModTabs.REGISTRY.register(bus);
 
 		// Start of user code block mod init
 		// End of user code block mod init
